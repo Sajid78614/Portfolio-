@@ -59,11 +59,12 @@ app.use((error, _request, response, _next) => {
 });
 
 async function start() {
-  if (!process.env.MONGODB_URI) {
-    throw new Error("MONGODB_URI is required. Copy server/.env.example to server/.env and configure it.");
+  if (process.env.MONGODB_URI) {
+    await mongoose.connect(process.env.MONGODB_URI);
+  } else {
+    console.warn("MONGODB_URI is not set; contact form submissions will be unavailable.");
   }
 
-  await mongoose.connect(process.env.MONGODB_URI);
   app.listen(port, () => {
     console.log(`Portfolio API listening on http://localhost:${port}`);
   });

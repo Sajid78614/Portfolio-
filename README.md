@@ -5,7 +5,7 @@ A responsive personal portfolio built with React and Vite, an Express API, and M
 ## Requirements
 
 - Node.js 20.19+ or 22.12+
-- MongoDB running locally, or a MongoDB connection URI
+- MongoDB running locally or a connection URI, if you want the contact form to store messages
 
 ## Get started
 
@@ -15,7 +15,7 @@ A responsive personal portfolio built with React and Vite, an Express API, and M
    npm install
    ```
 
-2. Copy `server/.env.example` to `server/.env` and set `MONGODB_URI` to your MongoDB connection string.
+2. Optionally copy `server/.env.example` to `server/.env` and set `MONGODB_URI` to your MongoDB connection string to enable contact message storage.
 3. Start the frontend and API together:
 
    ```sh
@@ -24,7 +24,7 @@ A responsive personal portfolio built with React and Vite, an Express API, and M
 
 4. Open [http://localhost:5173](http://localhost:5173). The API health check is at [http://localhost:5000/api/health](http://localhost:5000/api/health).
 
-The contact form saves messages in MongoDB. Configure MongoDB before starting the API.
+The portfolio and API can run without MongoDB. Without `MONGODB_URI`, contact form submissions are unavailable; configure MongoDB to store messages.
 
 ## Personalize
 
@@ -43,7 +43,7 @@ The Express server serves the built portfolio and API from the same origin.
 
 1. Push the repository to GitHub.
 2. In Render, create a new Blueprint and connect this repository. Render will use [`render.yaml`](./render.yaml) to build and start the web service.
-3. When prompted, set `MONGODB_URI` to a MongoDB connection URI for a hosted database, such as MongoDB Atlas. Do not commit this value to the repository.
+3. MongoDB is optional. Without `MONGODB_URI`, the portfolio deploys but contact form submissions are unavailable. To enable message storage later, add `MONGODB_URI` to the service's environment settings in Render. Do not commit the URI to the repository.
 4. Once deployment is healthy, open the service URL. The health endpoint is available at `/api/health`.
 
-The Blueprint uses Render's free web-service plan, which may spin down after inactivity. Configure your MongoDB provider's network access to allow connections from Render.
+The Blueprint uses Render's free web-service plan, which may spin down after inactivity. If you add MongoDB later, configure its network access to allow connections from Render.
