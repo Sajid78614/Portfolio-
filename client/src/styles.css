@@ -306,3 +306,26 @@ body {
 .main-nav.is-open { background: var(--paper); border-color: var(--line); }
 .main-nav > a:not(.nav-cta) { border-color: var(--line); }
 :focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.tripgraph-window:hover {
+ rotate: calc(-10deg); 
+}
+.attendance-window:hover {
+ rotate: calc(-10deg); 
+}
+
+.project-title-row>h3::after{
+  display:block;
+  content: '';
+  border-bottom: solid 3px var(--green);  
+ transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+
+.project-title-row>h3:hover:after { transform: scaleX(1); }
+.project-title-row>h3.fromRight:after{ transform-origin:100% 50%; }
+.project-title-row>h3.fromLeft:after{  transform-origin:  0% 50%; }
+
+
+.auction-window:hover{
+  rotate: calc(-10deg);
+}

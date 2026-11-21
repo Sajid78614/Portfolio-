@@ -271,7 +271,7 @@ function App() {
               <div className="social-links">
                 {profile.github && <a href={profile.github} target="_blank" rel="noreferrer"><Github size={16} /> GitHub <ArrowUpRight size={13} /></a>}
                 {profile.linkedin && <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={16} /> LinkedIn <ArrowUpRight size={13} /></a>}
-                {profile.resume && <a href={profile.resume} download="Md-Sajid-Raza-Resume.pdf"><FileText size={16} /> Resume <Download size={13} /></a>}
+                {profile.resume && <a href={profile.resume}  link="https://drive.google.com/file/d/1ahSXrkLNixNV5H7MYCdkhwO797R1E6wA/view?usp=drive_link" target="_blank"><FileText size={16} /> Resume <Download size={13} /></a>}
               </div>
             )}
           </div>
